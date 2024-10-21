@@ -1,0 +1,642 @@
+.details-header {
+  background-color: var(--neutrals-200);
+  padding-bottom: 16px;
+  position: sticky;
+  top: 86px;
+  z-index: 99;
+}
+.details-header.open {
+  z-index: 10;
+}
+
+.details-page.lesson-page .details-header {
+  top: 0;
+}
+.details-header-container {
+  width: 100%;
+}
+.details-header-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details-header-content .details-header-content-left {
+  display: flex;
+  align-items: center;
+  /* width: 80%; */
+  width: 100%;
+}
+
+.details-header-content.lesson-page .details-header-content-left {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.details-header-content.teacher .details-header-content-left {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.teahcer-page-add-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.details-header-content .search-input-con {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.details-header-content .search-input-con .input-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.details-header-content .search-input-con {
+  width: 236px;
+}
+.details-header-content .search-input-con .input-box input {
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 12px 10px 40px;
+  background: #fff;
+  width: 100%;
+}
+.details-header-content .search-input-con .input-box input::placeholder {
+  color: var(--neutrals-600, #717171);
+}
+.details-header-content .search-input-con .input-box .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  cursor: pointer;
+}
+.details-header-content .add-detail {
+  background-color: var(--primary-500);
+  border-radius: 8px;
+  padding: 10px 24px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  white-space: nowrap;
+}
+.details-header-content .add-detail:hover {
+  background-color: var(--primary-700);
+}
+.details-header-container .dropdown-name.mobile {
+  display: none;
+}
+
+.details-header-content-left .lesson-table-header-content {
+  display: flex;
+  align-items: center;
+}
+
+.details-header-content-left .lesson-table-header-content .lesson-table-status {
+  display: flex;
+  align-items: center;
+}
+
+.details-header-content-left .lesson-table-header-content .date-container {
+  margin-left: 10px;
+}
+
+.details-header-content-left
+  .lesson-table-header-content
+  .date-container
+  .date-container
+  .from {
+  width: 292px;
+}
+
+.lesson-page .apply-btn,
+.teachers-page .apply-btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+.lesson-page .apply-btn .add-detail,
+.teachers-page .apply-btn .add-detail {
+  background-color: var(--primary-500);
+  border-radius: 8px;
+  padding: 10px 24px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  white-space: nowrap;
+}
+
+/* student -page */
+
+.details-page.students-page .student-filter-header,
+.details-page.career-page .career-filter-header {
+  width: 100%;
+  display: flex;
+}
+
+/* teacher-page */
+
+.details-page.teachers-page .teacher-header-filter,
+.details-page.students-page .student-header-filter,
+.details-page .salary-header-filter,
+.details-page.groups-page .groups-header-filter {
+  width: 100%;
+  display: flex;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.details-page.students-page .student-header-filter .students-all-filter,
+.details-page.teachers-page .teacher-header-filter .teachers-all-filter,
+.details-page .salary-header-filter .salary-all-filter,
+.details-page.groups-page .groups-header-filter .groups-all-filter {
+  display: flex;
+  align-items: center;
+}
+
+.details-page.students-page .student-header-filter .student-other-container,
+.details-page.teachers-page .teacher-header-filter .teacher-other-container,
+.details-page.groups-page .groups-header-filter .group-other-container {
+  display: flex;
+  width: 100%;
+}
+.details-page .salary-header-filter {
+  justify-content: space-between;
+}
+
+.details-page.syllabus-page .syllabus-all-filter-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.details-page .consultation-header-filter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.details-page .consultation-header-filter .consultation-top-filter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.details-page .consultation-header-filter .consultation-bottom-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lesson-table-btn-container.teacher,
+.lesson-table-btn-container.student,
+.lesson-table-btn-container.groups,
+.lesson-table-btn-container.tution {
+  margin-left: 10px;
+}
+
+.details-page .teacher-header-filter-container,
+.details-page .student-header-filter-container,
+.details-page .salary-header-filter-container,
+.details-page .consultation-header-filter-container {
+  width: 100%;
+}
+
+.details-header .circle-icon {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  position: relative;
+}
+.details-header .circle-icon .filter-count {
+  position: absolute;
+  left: 45%;
+  font-size: 14px;
+  color: var(--secondary-900);
+  font-weight: bold;
+}
+.details-header .circle-icon svg {
+  transform: rotate(90deg);
+}
+/* tution fee */
+
+.details-page.tuition-fee-page .tuition-fee-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.details-page.tuition-fee-page
+  .tuition-fee-container
+  .tuition-fee-payment-container {
+  margin: 10px 0 20px 0;
+}
+
+.details-page.tuition-fee-page
+  .tuition-fee-container
+  .tuition-fee-filter-header {
+  display: flex;
+  align-items: center;
+}
+
+.details-page.tuition-fee-page
+  .tuition-fee-container
+  .tuition-fee-filter-header
+  .tuition-fee-all-filter {
+  display: flex;
+  align-items: center;
+}
+
+.tuition-fee-other-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.details-page.tuition-fee-page .tution-fee-filter-header {
+  width: 100%;
+  display: flex;
+}
+
+/* groups */
+.details-page.groups-page .groups-filter-header {
+  width: 100%;
+  /* display: flex; */
+}
+
+/* lesson  page */
+
+.details-page .lesson-page-header-container {
+  width: 100%;
+}
+
+.details-page .lesson-page-header-container .lesson-page-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details-page
+  .lesson-page-header-container
+  .lesson-page-header-top
+  .lesson-status-header {
+  width: 60%;
+}
+.details-page
+  .lesson-page-header-container
+  .lesson-page-header-top
+  .lesson-page-add-btn {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.details-page .lesson-page-header-container .lesson-page-filter-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+/* salary page  */
+
+.salary-other-container {
+  display: flex;
+}
+.salary-other-container .clear-btn {
+  padding: 10px 16px;
+  color: var(--neutrals-500, #9a9a9a);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 1400px) {
+  .lesson-page .details-header-content .details-header-content-left {
+    width: 100%;
+  }
+  .lesson-page .details-header-content .add-detail {
+    margin-top: 10px;
+  }
+
+  .worker-page .details-header-content {
+    flex-direction: column-reverse;
+  }
+  .worker-page .details-header-content .lesson-table-add-btn {
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .lesson-page .details-header-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .details-header-content-left .lesson-table-header-content {
+    flex-direction: column;
+    width: 100%;
+  }
+  .details-header-content-left
+    .lesson-table-header-content
+    .lesson-table-status {
+    width: 100%;
+  }
+  .details-header-content-left
+    .lesson-table-header-content
+    .lesson-table-datepick {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .details-header-content .details-header-content-left .dropdown-name {
+    width: 50%;
+  }
+  .details-page .lesson-table-add-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .details-page .lesson-page-header-container .lesson-page-filter-container {
+    flex-direction: column;
+  }
+  .details-page .lesson-page-header-container .lesson-page-apply-btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .details-page .salary-header-filter-container .salary-header-filter {
+    flex-direction: column;
+  }
+  .details-page .salary-header-filter .salary-all-filter {
+    width: 100%;
+  }
+  .details-page .salary-header-filter .salary-all-filter .date-container {
+    width: 100%;
+  }
+  .details-page .salary-header-filter .salary-other-container {
+    width: 100%;
+    margin-top: 20px;
+    justify-content: flex-end;
+  }
+  .details-page.tuition-fee-page
+    .tuition-fee-container
+    .tuition-fee-filter-header {
+    flex-direction: column;
+  }
+
+  .details-page.tuition-fee-page
+    .tuition-fee-container
+    .tuition-fee-filter-header
+    .tuition-fee-all-filter {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .tuition-fee-page .details-header{
+    z-index: 0;
+    position: relative;
+    top: 0;
+
+  }
+
+
+
+  .details-page.tuition-fee-page
+    .tuition-fee-container
+    .tuition-fee-filter-header
+    .tuition-fee-all-filter 
+    .search-input-con
+    {
+      width: 100%;
+    }
+
+    .details-page.tuition-fee-page
+    .tuition-fee-container
+    .tuition-fee-filter-header
+    .tuition-fee-all-filter 
+    .search-input-con .input-box {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .details-page.tuition-fee-page
+    .tuition-fee-container
+    .tuition-fee-filter-header .dropdown-name{
+      width: 100%;
+      margin: 0;
+      margin: 10px 0;
+    }
+
+  .details-page.tuition-fee-page
+    .tuition-fee-container
+    .tuition-fee-filter-header
+    .tuition-fee-other-container {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .details-page .consultation-header-filter .consultation-top-filter {
+    flex-direction: column;
+  }
+  .details-page
+    .consultation-header-filter
+    .consultation-top-filter
+    .dropdown-name {
+    width: 100%;
+    margin: 0;
+    margin: 10px;
+  }
+
+  .details-header-content
+    .details-header-content-left
+    .search-input-con
+    .input-box {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .details-header-content .details-header-content-left .search-input-con {
+    /* width: 200px !important; */
+    width: 100%;
+  }
+  .details-header-content .details-header-content-left .dropdown-name {
+    margin: 0;
+    margin: 12px 0;
+    width: 100%;
+  }
+
+
+  .details-page .consultation-header-filter .consultation-bottom-filter{
+    flex-direction: column;
+  }
+
+  .details-page .consultation-header-filter .consultation-bottom-filter .date-container {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .lesson-table-btn-container.consultation{
+    justify-content: flex-end;
+    width: 100%;
+    display: flex;
+  }
+  
+ 
+}
+@media screen and (max-width: 850px) {
+  /* .details-header-content {
+    flex-direction: row;
+    margin-bottom: 12px;
+  } */
+  .details-page.courses .details-header-content,
+  .details-page.syllabus-page .details-header-content,
+  .details-page.rooms .details-header-content {
+    margin-bottom: 0;
+    flex-direction: column-reverse;
+    /* flex-direction: row; */
+  }
+
+  .details-page.courses .details-header-content .lesson-table-add-btn,
+  .details-page.syllabus-page .details-header-content .lesson-table-add-btn,
+  .details-page.rooms .details-header-content .lesson-table-add-btn {
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .details-page.syllabus-page
+    .details-header-content
+    .details-header-content-left {
+    flex-direction: column;
+  }
+
+  .details-page.students-page .student-header-filter,
+  .details-page.teachers-page .teacher-header-filter,
+  .details-page.groups-page .groups-header-filter {
+    flex-direction: column;
+  }
+  .details-page.students-page .student-header-filter .students-all-filter,
+  .details-page.teachers-page .teacher-header-filter .teachers-all-filter,
+  .details-page.groups-page .groups-header-filter .groups-all-filter {
+    width: 100%;
+    flex-direction: column;
+  }
+  .details-page.students-page .student-header-filter .student-other-container,
+  .details-page.teachers-page .teacher-header-filter .teacher-other-container,
+  .details-page.groups-page .groups-header-filter .group-other-container {
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+
+  .details-header-content .details-header-content-left {
+    /* align-items: flex-start; */
+    /* flex-direction: column; */
+    width: 100%;
+  }
+  
+
+  .details-header-container .dropdown-name.mobile {
+    display: inline-block;
+  }
+
+  .lesson-table-btn-container.desktop {
+    display: none;
+  }
+
+   .infinity-scroll {
+    display: none;
+  }
+
+  .details-header-content-left
+    .lesson-table-header-content
+    .lesson-table-status {
+    flex-direction: column;
+  }
+  .details-header-content-left
+    .lesson-table-header-content
+    .lesson-table-datepick
+    .date-container {
+    flex-direction: column;
+    margin: 0;
+  }
+  .details-header-content-left
+    .lesson-table-header-content
+    .lesson-table-datepick
+    .date-container
+    .startdate-container {
+    width: 100%;
+    margin: 0;
+    margin: 10px 0;
+  }
+
+  .details-page .lesson-page-header-container .lesson-page-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details-page
+    .lesson-page-header-container
+    .lesson-page-header-top
+    .lesson-status-header {
+    width: 100%;
+  }
+  .details-page
+    .lesson-page-header-container
+    .lesson-page-header-top
+    .lesson-page-add-btn {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .details-page .salary-header-filter .salary-all-filter {
+    flex-direction: column;
+  }
+  .details-page .salary-header-filter .salary-all-filter .date-container {
+    flex-direction: column;
+    margin: 0;
+  }
+  .details-page
+    .salary-header-filter
+    .salary-all-filter
+    .date-container
+    .startdate-container {
+    width: 100%;
+    margin: 0;
+    margin: 5px 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .details-header-content .add-detail {
+    padding: 9px 16px;
+  }
+  .details-header-content .add-detail svg {
+    width: 12px;
+    height: 12px;
+  }
+  .details-header-content .search-input-con .input-box input {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .details-header-content .details-header-content-left .search-input-con {
+    width: 100% !important;
+  }
+}

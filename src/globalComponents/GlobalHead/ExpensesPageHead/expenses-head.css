@@ -1,0 +1,21 @@
+.expenses-page-head{
+    display: flex;
+    align-items: center;
+}
+
+
+.expenses-page-head .global-category-dropdown .dropdown-head{
+    background-color: white;
+    margin: 0 5px;
+}
+
+.expenses-page-head .global-category-dropdown{
+    width: 200px;
+}
+
+@media screen and (max-width:1400px) {
+    .expenses-page-head{
+        width: 100%;
+    }
+   
+}
