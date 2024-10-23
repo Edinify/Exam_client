@@ -28,13 +28,7 @@ const QuestionCard = ({
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const { user } = useSelector((state) => state.user);
 
-  const listData = [
-    // { key: "İxtisas", value: courses },
-    // {
-    //   key: "Mobil nömrə",
-    //   value: data?.phone ? data?.phone : "",
-    // },
-  ];
+
 
   const updateItem = (modalType) => {
     dispatch({
@@ -50,7 +44,6 @@ const QuestionCard = ({
     dispatch(deleteQuestion(data._id));
   };
 
-  console.log(data, "qusetionnnnnnn data");
 
   return (
     <>

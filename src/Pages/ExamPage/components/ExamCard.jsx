@@ -3,7 +3,6 @@ import LessonIcon from "../../../assets/images/exam/lesson-icon.png";
 import moment from "moment";
 import {
   EXAM_MODAL_ACTION_TYPE,
-  EXAM_PAGE_ACTION_TYPE,
 } from "../../../redux/actions-type";
 import { deleteExamAction } from "../../../redux/actions/examActions";
 import { useDispatch } from "react-redux";
@@ -39,7 +38,6 @@ const ExamCard = ({ data }) => {
       navigate(`/exams/${data._id}/questions`);
     } else if (location.pathname === "/exams/examResults") {
       navigate(`/exams/examResults/${data._id}`);
-      dispatch({ type: EXAM_PAGE_ACTION_TYPE.GET_RESULTS, payload: data });
     }
   };
 

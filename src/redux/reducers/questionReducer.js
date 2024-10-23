@@ -3,6 +3,7 @@ import { EXAM_QUESTIONS_ACTION_TYPE } from "../actions-type";
 const initialState = {
   questions: [],
   loading: false,
+  currentExam:{}
 };
 
 export const questionReducer = (state = initialState, action) => {
@@ -10,7 +11,8 @@ export const questionReducer = (state = initialState, action) => {
     case EXAM_QUESTIONS_ACTION_TYPE.GET_QUESTIONS:
       return {
         ...state,
-        questions: action.payload,
+        questions: action.payload.questions,
+        currentExam:action.payload.currentExam
       };
     case EXAM_QUESTIONS_ACTION_TYPE.CREATE_QUESTION:
       return {

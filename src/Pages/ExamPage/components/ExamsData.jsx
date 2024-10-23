@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ExamCard from "./ExamCard";
-import { useLocation, useNavigate } from "react-router-dom";
 // import FutureExamCard from "./FutureExamCard";
 // import ExamResults from "./ExamResults";
 import { useSelector } from "react-redux";

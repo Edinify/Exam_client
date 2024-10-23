@@ -6,6 +6,7 @@ import {
   EXAM_PAGE_ACTION_TYPE,
   EXAM_QUESTION_MODAL_ACTION_TYPE,
   EXAM_QUESTIONS_ACTION_TYPE,
+  RESULTS_ACTION_TYPE,
 } from "../actions-type";
 
 const API = axios.create({
@@ -145,23 +146,24 @@ export const deleteExamAction = (_id) => async (dispatch) => {
   }
 };
 
-export const getExamResultAction=(_id) =>async(dispatch)=>{
+export const getExamResultAction = (_id) => async (dispatch) => {
   try {
-    const {data} = await API.get(`/results/by-exam/${_id}`);
-    dispatch({type:EXAM_PAGE_ACTION_TYPE.GET_RESULTS,payload:data})
+    const { data } = await API.get(`/results/by-exam/${_id}`);
+    console.log(data,"dataaa")
+    dispatch({ type: RESULTS_ACTION_TYPE.GET_RESULTS, payload: data });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
-export const getStudentExamResultAction=()=>async(dispatch)=>{
+export const getStudentExamResultAction = () => async (dispatch) => {
   try {
-    const {data} = await API.get("/results/by-student");
-    dispatch({type:EXAM_PAGE_ACTION_TYPE.GET_STUDENT_RESULTS,payload:data})
+    const { data } = await API.get("/results/by-student");
+    dispatch({ type: RESULTS_ACTION_TYPE.GET_STUDENT_RESULTS, payload: data });
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-}
+};
 
 // questions  actions
 

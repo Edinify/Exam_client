@@ -78,6 +78,7 @@ import { questionModalReducer } from "./reducers/questionModalReducer";
 import { salaryPaginationReducer } from "./reducers/salaryPaginationReducer";
 import { salaryModalReducer } from "./reducers/salaryModalReducer";
 import { expensesFilterReducer } from "./reducers/expensesFilter";
+import { examResultsReducer } from "./reducers/examResultsReducer";
 
 const initialState = {};
 const reducers = combineReducers({
@@ -154,6 +155,7 @@ const reducers = combineReducers({
   salaryPagination: salaryPaginationReducer,
   salaryModal:salaryModalReducer,
   expensesFilter:expensesFilterReducer,
+  examResults:examResultsReducer
 });
 // test
 

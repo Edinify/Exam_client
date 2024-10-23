@@ -33,12 +33,9 @@ const ExamPage = () => {
     });
   };
 
-  const lessonData = [
-    { id: 1, name: "Informatika", result: "20 bal" },
-    { id: 2, name: "Informatika", result: "20 bal" },
-    { id: 3, name: "Informatika", result: "20 bal" },
-    { id: 4, name: "Informatika", result: "20 bal" },
-  ];
+  const { results } = useSelector((state) => state.examResults);
+
+  console.log(results, "ress");
 
   useEffect(() => {
     dispatch(getStudentExamResultAction());
@@ -106,7 +103,9 @@ const ExamPage = () => {
         firstRoute={"/exams/futureExams"}
         secondRoute={"/exams/pastExams"}
         thirdRoute={"/exams/examResults"}
-        firstPathname={" Gələcək imtahanlar"}
+        firstPathname={
+          user.role === "student" ? "İmtahanlar" : "Gələcək imtahanlar"
+        }
         secondPathname={"Keçmiş İmtahanlar"}
         thirdPathname={"İmtahan nəticələri"}
       />
@@ -119,12 +118,12 @@ const ExamPage = () => {
             <h2>İmtahan nəticələri</h2>
           </div>
           <div>
-            {lessonData?.map((lesson) => (
-              <div key={lesson.id} className="exam-res-container">
+            {results?.map((lesson, i) => (
+              <div key={i} className="exam-res-container">
                 <div className="lesson-name">
-                  <h4>{lesson.name}</h4>
+                  <h4>{lesson.examName}</h4>
                 </div>
-                <h5>{lesson.result}</h5>
+                <h5>{lesson?.correctCount} bal</h5>
               </div>
             ))}
           </div>

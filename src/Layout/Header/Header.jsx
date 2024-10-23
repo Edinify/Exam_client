@@ -12,6 +12,8 @@ export const Header = () => {
   };
   const { openSidebar } = useSelector((state) => state.openSidebar);
 
+  const { currentExam } = useSelector((state) => state.examResults);
+
   const getPageTitle = (pathname) => {
     switch (pathname) {
       case "/groups/current":
@@ -59,8 +61,16 @@ export const Header = () => {
         return "Maliyyə";
       case "/expenses":
         return "Xərclər";
-        case "/salary":
-          return "Əmək haqqı";
+      case "/salary":
+        return "Əmək haqqı";
+      case `/exams/examResults/${currentExam?._id}`:
+        return currentExam?.name;
+      case "/exams/futureExams":
+        return "İmtahanlar";
+      case "/exams/pastExams":
+        return "İmtahanlar";
+      case "/exams/examResults":
+        return "İmtahan nəticələri";
       default:
         return "";
     }

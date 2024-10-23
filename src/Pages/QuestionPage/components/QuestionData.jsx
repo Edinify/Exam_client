@@ -6,14 +6,15 @@ import QuestionCard from "./QuestionCard";
 import ResultModal from "./ResultModal";
 
 const QuestionData = () => {
-  const { questions } = useSelector((state) => state.questionsData);
+  const { questions,currentExam } = useSelector((state) => state.questionsData);
   const { openConfirmModal } = useSelector((state) => state.studentsModal);
   const [openMoreModal, setOpenMoreModal] = useState(false);
   const [openResultModal, setOpenResultModal] = useState(false);
 
-  console.log(questions, "questionss");
 
   const { user } = useSelector((state) => state.user);
+
+  console.log(currentExam,"current")
 
   useEffect(() => {
     if (openMoreModal) {
@@ -28,6 +29,10 @@ const QuestionData = () => {
       {openConfirmModal && <ConfirmModal type="student" />}
       {openResultModal && <ResultModal />}
       <div className="questions-container">
+        <div className="question-header">
+          <h4>{currentExam?.name}</h4>
+          <span>60:00</span>
+        </div>
         <ul>
           {questions?.map((question, i) => (
             <li key={question._id}>
