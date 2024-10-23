@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 import ConfirmModal from "../../../globalComponents/ConfirmModal/ConfirmModal";
 
 import QuestionCard from "./QuestionCard";
+import ResultModal from "./ResultModal";
 
 const QuestionData = () => {
   const { questions } = useSelector((state) => state.questionsData);
   const { openConfirmModal } = useSelector((state) => state.studentsModal);
   const [openMoreModal, setOpenMoreModal] = useState(false);
+  const [openResultModal, setOpenResultModal] = useState(false);
 
   console.log(questions, "questionss");
 
@@ -22,6 +24,7 @@ const QuestionData = () => {
   return (
     <>
       {openConfirmModal && <ConfirmModal type="student" />}
+      {openResultModal && <ResultModal setOpenResultModal={setOpenResultModal} />}
       <div className="questions-container">
         <ul>
           {questions?.map((question, i) => (
@@ -34,6 +37,9 @@ const QuestionData = () => {
             </li>
           ))}
         </ul>
+        <div className="question-acc-btn">
+          <button onClick={() => setOpenResultModal(true)}>Təsdiqlə</button>
+        </div>
       </div>
 
       <div className="details-list-tablet with-more">

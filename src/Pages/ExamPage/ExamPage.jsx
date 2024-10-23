@@ -16,6 +16,7 @@ const ExamPage = () => {
   const { exams, loading, totalLength } = useSelector(
     (state) => state.examsData
   );
+  const {user} = useSelector(state=>state.user);
 
   const location = useLocation();
 
@@ -28,6 +29,15 @@ const ExamPage = () => {
       },
     });
   };
+
+
+  const lessonData=[
+    {id:1,name:"Informatika",result:"20 bal"},
+    {id:2,name:"Informatika",result:"20 bal"},
+    {id:3,name:"Informatika",result:"20 bal"},
+    {id:4,name:"Informatika",result:"20 bal"},
+  ]
+  
   const searchData = (e) => {
     e.preventDefault();
     dispatch({
@@ -75,7 +85,6 @@ const ExamPage = () => {
     };
   }, [location.pathname]);
 
-  console.log("exam page", location.pathname);
   return (
     <div className="details-page ">
       <GlobalHead
@@ -95,7 +104,30 @@ const ExamPage = () => {
         secondPathname={"Keçmiş İmtahanlar"}
         thirdPathname={"İmtahan nəticələri"}
       />
+      {user.role==="super-admin"?
       <ExamsData getNextExam={getNextExam} />
+      :
+      location.pathname==="/exams/examResults" ?
+      <div className="exam-results">
+      <div className="exam-results-header">
+     <h2>İmtahan nəticələri</h2>
+   </div>
+   <div className>
+     {lessonData?.map(lesson=>(
+       <div key={lesson?.id} className="exam-res-container" >
+         <div className="lesson-name">
+           <h4>{lesson.name}</h4>
+         </div>
+         <h5>{lesson.result}</h5>
+       </div>
+     ))}
+   </div>
+ </div>
+ :
+ <ExamsData getNextExam={getNextExam} />
+
+      }
+      
     </div>
   );
 };

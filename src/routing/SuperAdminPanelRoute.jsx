@@ -20,6 +20,7 @@ import ExamPage from "../Pages/ExamPage/ExamPage";
 import QuestionPage from "../Pages/QuestionPage/QuestionPage";
 import SalaryPage from "../Pages/SalaryPage/SalaryPage";
 import ExpensesPage from "../Pages/ExpensesPage/ExpensesPage";
+import ExamResults from "../Pages/ExamPage/components/ExamResults";
 
 const SuperAdminPanelRoute = () => {
   return (
@@ -50,6 +51,7 @@ const SuperAdminPanelRoute = () => {
       <Route path="/exams/pastExams" element={<ExamPage />} />
       <Route path="/exams/examResults" element={<ExamPage />} />
       <Route path="/exams/:id/questions" element={<QuestionPage />} />
+      <Route path="/exams/examResults/:id" element={<ExamResults/>} />
       <Route path="/salary" element={<SalaryPage />} />
     </>
   );

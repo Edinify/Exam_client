@@ -66,7 +66,7 @@ const QuestionCard = ({
             {cellNumber}. {data?.text}
           </h3>
           <div className="exam-functions-container">
-            {user?.role != "student" && (
+            {user?.role !== "student" && (
               <UpdateDeleteModal
                 data={data}
                 updateItem={updateItem}
@@ -80,7 +80,7 @@ const QuestionCard = ({
           <ul>
             {data?.options?.map((item, i) => (
               <li key={i} className="question-options-list">
-                {(user?.role != "student" && (
+                {(user?.role !== "student" && (
                   <input type="checkbox" checked={item.isCorrect} />
                 )) || (
                   <input

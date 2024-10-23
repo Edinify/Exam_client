@@ -12,7 +12,9 @@ const NotFoundPage = ({ setNotFound }) => {
     if (user.role === "admin") {
       navigate("/");
     } else if (user.role === "super-admin") {
-      navigate("/");
+      navigate("/students");
+    } else if (user.role === "student") {
+      navigate("/exams/futureExams");
     } else if (user.role === "teacher") {
       navigate("/teacher-panel");
     } else if (user.role === "mentor") {

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ExamCard from "./ExamCard";
 import { useLocation, useNavigate } from "react-router-dom";
-import FutureExamCard from "./FutureExamCard";
-import ExamResults from "./ExamResults";
+// import FutureExamCard from "./FutureExamCard";
+// import ExamResults from "./ExamResults";
 import { useSelector } from "react-redux";
 import InfiniteScroll from "react-infinite-scroll-component";
 import SmallLoading from "../../../globalComponents/Loading/components/SmallLoading/SmallLoading";

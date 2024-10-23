@@ -1,45 +1,97 @@
-
-
-.questions-container{
-    padding: 40px;
+.questions-container {
+  padding: 40px;
 }
 
- 
- .questions-container .question-card{
-    margin: 10px 0;
-    padding: 16px;
+.questions-container .question-card {
+  margin: 10px 0;
+  padding: 16px;
 }
 
 .questions-container .question-card .question-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.questions-container .question-card .question-header h3{
-    color: #65C2F6;
-    font-size: 24px;
-    font-weight: 600;
+.questions-container .question-card .question-header h3 {
+  color: #65c2f6;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-.questions-container .question-card .question-options-container{
-    margin: 10px 0;
+.questions-container .question-card .question-options-container {
+  margin: 10px 0;
 }
 
-.questions-container .question-card .question-options-container .question-options-container h5 {
-    color: #7586AC;
-    font-size: 20px;
-    font-weight: 400;
+.questions-container
+  .question-card
+  .question-options-container
+  .question-options-container
+  h5 {
+  color: #7586ac;
+  font-size: 20px;
+  font-weight: 400;
 }
 
-.questions-container .question-card .question-options-container .question-options-list{
-    display: flex;
-    align-items: center;
+.questions-container
+  .question-card
+  .question-options-container
+  .question-options-list {
+  display: flex;
+  align-items: center;
 }
 
 .questions-container .question-card .question-options-container h5 {
-    color: #7586AC;
-    font-size: 20px;
-    font-weight: 400;
-    margin-left: 5px;
+  color: #7586ac;
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.questions-container .question-acc-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+.questions-container .question-acc-btn button {
+  background-color: #65c2f6;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 220px;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.res-modal {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.res-modal .res-modal-container{
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 30px  20px 20px 20px;
+    position: relative;
+}
+
+.res-modal .res-modal-container svg {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.res-modal .res-modal-container h4{
+    font-size: 24px;
+    font-weight: 600;
+    color: #462AFF;
 }
