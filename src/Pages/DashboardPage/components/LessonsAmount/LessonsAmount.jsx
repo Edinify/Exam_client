@@ -31,9 +31,6 @@ const LessonsAmount = () => {
   const [openDropdownCancelled, setOpenDropdownCancelled] = useState(false);
   const [openDropdownConfirmed, setOpenDropdownConfirmed] = useState(false);
 
-
-
-
   const applyConfirmedFilter = (startDate, endDate) => {
     dispatch(getAllEventsAction(startDate, endDate, ""));
     setOpenCalendar(false);
@@ -106,7 +103,6 @@ const LessonsAmount = () => {
             </p>
           </div>
         </div>
-
         <div className="content-box cancelled-lessons">
           <div className="left red">
             <ActiveStudentsIcon />
@@ -115,15 +111,20 @@ const LessonsAmount = () => {
           <div className="right">
             <div className="top">
               <h2 className="title">Aktiv tələbələr</h2>
-              {/* <DateDropdown
-                optionType={"date"}
-                calendar={true}
-                setOpenCalendar={setOpenCalendar}
-                openCalendar={openCalendar}
-                openDropdown={openDropdownCancelled}
-                setOpenDropdown={setOpenDropdownCancelled}
-                applyMonthsFilter={applyMonthsCancelledFilter}
-              /> */}
+            </div>
+            <p className="amount">
+              {cancelledLessonsData ? cancelledLessonsData : 0}
+            </p>
+          </div>
+        </div>
+        <div className="content-box cancelled-lessons">
+          <div className="left red">
+            <ActiveStudentsIcon />
+          </div>
+
+          <div className="right">
+            <div className="top">
+              <h2 className="title">Keçirilmiş imtahanlar</h2>
             </div>
             <p className="amount">
               {cancelledLessonsData ? cancelledLessonsData : 0}
@@ -131,7 +132,21 @@ const LessonsAmount = () => {
           </div>
         </div>
 
-        <div className="content-box">
+        <div className="content-box cancelled-lessons">
+          <div className="left red">
+            <ActiveStudentsIcon />
+          </div>
+
+          <div className="right">
+            <div className="top">
+              <h2 className="title">Gözləyən imtahanlar</h2>
+            </div>
+            <p className="amount">
+              {cancelledLessonsData ? cancelledLessonsData : 0}
+            </p>
+          </div>
+        </div>
+        {/* <div className="content-box">
           <div className="left grey">
             <GroupsIcon />
           </div>
@@ -142,8 +157,8 @@ const LessonsAmount = () => {
             </div>
             <p className="amount">{allGroupsCount || 0}</p>
           </div>
-        </div>
-        <div className="content-box">
+        </div> */}
+        {/* <div className="content-box">
           <div className="left waiting">
             <GroupsWaitingIcon />
           </div>
@@ -154,8 +169,8 @@ const LessonsAmount = () => {
             </div>
             <p className="amount">{waitingGroupsCount || 0}</p>
           </div>
-        </div>
-        <div className="content-box">
+        </div> */}
+        {/* <div className="content-box">
           <div className="left current">
             <GroupsCurrentIcon />
           </div>
@@ -166,8 +181,8 @@ const LessonsAmount = () => {
             </div>
             <p className="amount">{currentGroupsCount || 0}</p>
           </div>
-        </div>
-        <div className="content-box">
+        </div> */}
+        {/* <div className="content-box">
           <div className="left ended">
             <GroupsEndedIcon />
           </div>
@@ -178,8 +193,8 @@ const LessonsAmount = () => {
             </div>
             <p className="amount">{endedGroupsCount || 0}</p>
           </div>
-        </div>
-        <div className="content-box events">
+        </div> */}
+        {/* <div className="content-box events">
           <div className="left green">
             <EventsIcon />
           </div>
@@ -202,7 +217,7 @@ const LessonsAmount = () => {
             </div>
             <p className="amount">{eventsData ? eventsData : 0}</p>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {openCalendar && (

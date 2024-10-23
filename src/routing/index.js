@@ -17,7 +17,6 @@ import TeacherPanelRoute from "./TeacherPanelRoute";
 import StudentPanelRoute from "./StudentPanelRoute";
 import { useCustomHook } from "../globalComponents/GlobalFunctions/globalFunctions";
 
-
 export const Routing = () => {
   const dispatch = useDispatch();
   const location = useLocation();
@@ -47,7 +46,7 @@ export const Routing = () => {
           location.pathname.startsWith("/login") ||
           location.pathname === "/"
         ) {
-          navigate("/dashboard");
+          navigate("/exams/futureExams");
         }
       } else if (
         (user.role === "teacher" || user.role === "mentor") &&
@@ -58,10 +57,9 @@ export const Routing = () => {
         }
       } else if (user.role === "student" && !notFound) {
         if (location.pathname.startsWith("/login")) {
-          navigate("/student-panel");
+          navigate("/exams/futureExams");
         }
-      }
-       else if (user.role === "worker" && !notFound) {
+      } else if (user.role === "worker" && !notFound) {
         let profile;
         for (let profileItem of generalProfileList) {
           const checkProfile = user?.profiles.find(

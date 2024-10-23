@@ -29,6 +29,7 @@ export default function InputField({
         dateFormat="dd/MM/yyyy"
         placeholderText="dd/mm/yyyy"
         locale="az"
+        disabled={modalData?._id ? true : false}
       />
     </div>
   );
@@ -55,6 +56,7 @@ export default function InputField({
           ? moment(modalData[inputName]).format("YYYY-MM-DD")
           : "",
       className: "birthday-input",
+      disabled: true,
     },
     {
       inputName: "startTime",
@@ -64,6 +66,7 @@ export default function InputField({
       marginBottom: "0",
       inputValue: modalData[inputName] || "",
       className: "exam-time-input",
+      disabled: true,
     },
     {
       inputName: "endTime",
@@ -73,6 +76,7 @@ export default function InputField({
       marginBottom: "0",
       inputValue: modalData[inputName] || "",
       className: "exam-time-input",
+      disabled: true,
     },
   ];
 
@@ -82,7 +86,7 @@ export default function InputField({
         inputData.find((item) => item.inputName === inputName).className
       }
     >
-      {inputName === "date"  ? (
+      {inputName === "date" ? (
         renderDatePicker(inputName, "Tarix seçin")
       ) : (
         <TextField
@@ -106,8 +110,9 @@ export default function InputField({
           InputLabelProps={{
             shrink:
               inputData.find((item) => item.inputName === inputName)?.type ===
-              "date" || inputData.find((item) => item.inputName === inputName)?.type ===
-              "time" 
+                "date" ||
+              inputData.find((item) => item.inputName === inputName)?.type ===
+                "time"
                 ? true
                 : inputData.find((item) => item.inputName === inputName)
                     ?.inputValue
@@ -137,6 +142,10 @@ export default function InputField({
             updateModalState(inputName, e.target.value);
             setInputValue(inputName, e.target.value);
           }}
+          disabled={
+            inputData.find((item) => item.inputName === inputName).disabled &&
+            modalData?._id
+          }
         />
       )}
 

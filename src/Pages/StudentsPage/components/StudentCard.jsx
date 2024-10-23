@@ -143,7 +143,7 @@ const StudentCard = ({
               <div className="right-fade"></div>
             </div>
           </td>
-          <td>
+          {/* <td>
             <div className="td-con" style={{ width: "200px" }}>
               <div className="table-scroll-text">{whereComingName || ""}</div>
               <div className="right-fade"></div>
@@ -174,7 +174,7 @@ const StudentCard = ({
               </div>
               <div className="right-fade"></div>
             </div>
-          </td>
+          </td> */}
           <td>
             <UpdateDeleteModal
               updateItem={updateItem}

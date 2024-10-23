@@ -47,6 +47,8 @@ const GlobalHead = ({
     }
   }, []);
 
+  console.log(location, "pathname");
+
   return (
     <div className={`details-header ${openSidebar ? "open" : ""} `}>
       <div className="container">
@@ -70,7 +72,8 @@ const GlobalHead = ({
               location.pathname === "/salary" ||
               statusType === "groups" ||
               location.pathname === "/consultation" ||
-              location.pathname === "/expenses"
+              location.pathname === "/expenses" ||
+              location.pathname.split("/").at(-1) === "questions"
                 ? null
                 : search && (
                     <>
@@ -190,8 +193,7 @@ const GlobalHead = ({
                   statusType !== "consultation" &&
                   statusType !== "groups" &&
                   statusType !== "expenses" &&
-                  statusType !== "salary" &&
-                  statusType !== "student" && (
+                  statusType !== "salary" && (
                     <button className="add-detail" onClick={openModal}>
                       <PlusIcon />
                       Əlavə et

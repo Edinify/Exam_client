@@ -94,7 +94,7 @@ const ExamModal = () => {
                 />
               ))}
             </div>
-            <CourseInput
+            {/* <CourseInput
               modalData={modalData}
               updateModalState={updateModalState}
               formik={formik}
@@ -103,7 +103,7 @@ const ExamModal = () => {
               modalData={modalData}
               updateModalState={updateModalState}
               formik={formik}
-            />
+            /> */}
             <StudentsList
             modalData={modalData}
             updateModalState={updateModalState}

@@ -175,6 +175,7 @@
 .details-table.student-table.only-show tr th,
 .details-table.student-table.only-show tr td {
   width: auto;
+
 }
 .details-table.student-table.only-show tr th:last-child,
 .details-table.student-table.only-show tr td:last-child,
@@ -363,6 +364,10 @@
 /* .details-table.courses-table */ {
   width: auto;
   overflow-x: scroll;
+  
+}
+.details-table.student-table{
+  min-width: 100%;
 }
 
 .scroll tr td:last-child {

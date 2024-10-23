@@ -22,8 +22,6 @@ const StudentList = ({ modalData, updateModalState }) => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const inputValue = selectedItem ? selectedItem.fullName : searchedValue;
 
-
-
   const getSearchValue = (e) => {
     if (!openDropdown) {
       setOpenDropdown(true);
@@ -78,15 +76,12 @@ const StudentList = ({ modalData, updateModalState }) => {
   };
 
   useEffect(() => {
-    if (modalData.course) {
-      dispatch(
-        getActiveStudentsAction({
-          studentsCount: 0,
-          searchQuery: searchedValue ? searchedValue : "",
-          courseId: modalData?.course?._id,
-        })
-      );
-    }
+    dispatch(
+      getActiveStudentsAction({
+        studentsCount: 0,
+        searchQuery: searchedValue ? searchedValue : "",
+      })
+    );
   }, []);
 
   return (
@@ -94,18 +89,18 @@ const StudentList = ({ modalData, updateModalState }) => {
       <div className={`dropdown-input search courses`}>
         <div className="left">
           <div className="input-box">
-            <div className="search-icon" onClick={() => searchData()}>
+            {/* <div className="search-icon" onClick={() => searchData()}>
               <SearchIcon />
-            </div>
+            </div> */}
             <TextField
               sx={{
                 "& input": {
                   fontSize: "12px",
-                  marginLeft: "25px",
+                  // marginLeft: "25px",
                   marginRight: "32px",
                 },
                 "& label": {
-                  paddingLeft: inputValue ? "0px" : "25px",
+                  paddingLeft: inputValue ? "0px" : "0px",
                 },
                 "& label.Mui-focused": {
                   paddingLeft: "0px",
@@ -121,8 +116,9 @@ const StudentList = ({ modalData, updateModalState }) => {
               autoComplete="off"
               value={inputValue}
               onChange={(e) => getSearchValue(e)}
+              disabled
             />
-           <DropdownIcon
+            <DropdownIcon
               setOpenDropdown={setOpenDropdown}
               openDropdown={openDropdown}
             />
@@ -134,19 +130,15 @@ const StudentList = ({ modalData, updateModalState }) => {
               </li>
             ) : (
               studentsByMore?.map((item, i) => (
-                <li
-                  key={i}
-                  onClick={() => setSelectedItem(item)}
-                 
-                >
+                <li key={i} onClick={() => setSelectedItem(item)}>
                   {modalData?.students?.find((obj) => obj._id === item._id) ? (
                     <CheckIcon />
                   ) : null}
-                  <h4>{item.fullName}</h4>
+                  <h4 style={{marginLeft: '16px'}}>{item.fullName}</h4>
                 </li>
               ))
             )}
-            {!loadingAll && (
+            {/* {!loadingAll && (
               <li>
                 <button
                   onClick={() => modalData.course && getMoreData()}
@@ -156,7 +148,7 @@ const StudentList = ({ modalData, updateModalState }) => {
                   {loading ? "yüklənir..." : "daha cox"}
                 </button>
               </li>
-            )}
+            )} */}
           </ul>
         </div>
 

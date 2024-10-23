@@ -146,7 +146,7 @@ export const getActiveStudentsAction = (payload) => async (dispatch) => {
   dispatch(setLoadingStudentsAction(true));
   try {
     const { data } = await API.get(
-      `/active?studentsCount=${payload.studentsCount}&searchQuery=${payload.searchQuery}&courseId=${payload.courseId}`
+      `/active?studentsCount=${payload.studentsCount}&searchQuery=${payload.searchQuery}`
     );
     // // console.log(data);
     if (payload.studentsCount > 0) {

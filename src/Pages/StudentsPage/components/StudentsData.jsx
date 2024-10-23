@@ -6,15 +6,13 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import SmallLoading from "../../../globalComponents/Loading/components/SmallLoading/SmallLoading";
 import MoreModal from "../../../globalComponents/MoreModal/MoreModal";
 
-
-const StudentsData = ({  userData, getNextStudents }) => {
+const StudentsData = ({ userData, getNextStudents }) => {
   const { students, hasMore } = useSelector(
     (state) => state.studentsPagination
   );
   const { openConfirmModal } = useSelector((state) => state.studentsModal);
   const [openMoreModal, setOpenMoreModal] = useState(false);
   const [scrollHeight, setScrollHeight] = useState(1);
-  
 
   const tableHead = [
     "Tələbə adı",
@@ -23,11 +21,11 @@ const StudentsData = ({  userData, getNextStudents }) => {
     "Email",
     "Doğum günü",
     "Mobil nömrə",
-    "Bizi haradan eşidiblər?",
-    "Haradan gəliblər",
-    "İxtisas",
-    "Qrup",
-    "Q/B",
+    // "Bizi haradan eşidiblər?",
+    // "Haradan gəliblər",
+    // "İxtisas",
+    // "Qrup",
+    // "Q/B",
     "",
   ];
 
@@ -61,13 +59,12 @@ const StudentsData = ({  userData, getNextStudents }) => {
     };
   }, []);
 
-
   return (
     <>
       {openConfirmModal && <ConfirmModal type="student" />}
       {openMoreModal && (
-            <MoreModal setOpenMoreModal={setOpenMoreModal} type="student" />
-          )}
+        <MoreModal setOpenMoreModal={setOpenMoreModal} type="student" />
+      )}
 
       <InfiniteScroll
         dataLength={students.length}
@@ -107,30 +104,29 @@ const StudentsData = ({  userData, getNextStudents }) => {
           </tbody>
         </table>
       </InfiniteScroll>
-    
+
       <div className="details-list-tablet with-more">
-      <InfiniteScroll
-        dataLength={students.length}
-        next={getNextStudents}
-        hasMore={hasMore}
-        loader={<SmallLoading />}
-        endMessage={<p style={{ textAlign: "center", fontSize: "20px" }}></p>}
-        height={scrollHeight}
-        scrollThreshold={0.7}
-      >
-        {students?.map((student, i) => (
-          <StudentCard
-            key={i}
-            data={student}
-            mode="tablet"
-            student={userData}
-            setOpenMoreModal={setOpenMoreModal}
-            cellNumber={i + 1}
-          />
-        ))}
+        <InfiniteScroll
+          dataLength={students.length}
+          next={getNextStudents}
+          hasMore={hasMore}
+          loader={<SmallLoading />}
+          endMessage={<p style={{ textAlign: "center", fontSize: "20px" }}></p>}
+          height={scrollHeight}
+          scrollThreshold={0.7}
+        >
+          {students?.map((student, i) => (
+            <StudentCard
+              key={i}
+              data={student}
+              mode="tablet"
+              student={userData}
+              setOpenMoreModal={setOpenMoreModal}
+              cellNumber={i + 1}
+            />
+          ))}
         </InfiniteScroll>
       </div>
-     
     </>
   );
 };

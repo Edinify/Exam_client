@@ -15,15 +15,13 @@ import { ReactComponent as EventsIcon } from "../../../../assets/icons/sidebar/e
 import { ReactComponent as SyllabusIcon } from "../../../../assets/icons/sidebar/syllabus-svgrepo-com.svg";
 import { ReactComponent as DiplomaIcon } from "../../../../assets/icons/sidebar/diploma.svg";
 import { ReactComponent as RoomIcon } from "../../../../assets/icons/room-icon.svg";
-import {ReactComponent as ExamIcon } from "../../../../assets/icons/sidebar/exam-icon.svg"
+import { ReactComponent as ExamIcon } from "../../../../assets/icons/sidebar/exam-icon.svg";
 import { ReactComponent as SalaryIcon } from "../../../../assets/icons/salaryIcon.svg";
 import { ReactComponent as ExpenseIcon } from "../../../../assets/icons/sidebar/expense.svg";
-
 
 const SidebarSuperAdmin = ({ closeSidebar }) => {
   const location = useLocation();
   const groupsNav = ["/groups/current", "/groups/waiting", "/groups/ended"];
-
 
   const financeNav = ["/finance/incomes", "/finance/expenses"];
 
@@ -33,16 +31,22 @@ const SidebarSuperAdmin = ({ closeSidebar }) => {
 
   return (
     <ul className="sidebar-nav-list">
-      <li>
+      {/* <li>
         <NavLink to="/dashboard" onClick={closeSidebar}>
           <DashboardIcon />
           İdarəetmə paneli
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink to="/lesson" onClick={closeSidebar} className="admin">
           <TableIcon />
           Cədvəl
+        </NavLink>
+      </li>  */}
+      <li>
+        <NavLink to="/exams/futureExams" onClick={closeSidebar}>
+          <ExamIcon />
+          Imtahanlar
         </NavLink>
       </li>
       <li>
@@ -51,7 +55,7 @@ const SidebarSuperAdmin = ({ closeSidebar }) => {
           Tələbələr
         </NavLink>
       </li>
-      <li>
+      {/* <li>
         <NavLink to="/teachers" onClick={closeSidebar}>
           <TeachersIcon />
           Təlimçilər
@@ -68,8 +72,8 @@ const SidebarSuperAdmin = ({ closeSidebar }) => {
           <SyllabusIcon />
           Sillabus
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink
           className={groupsNav.includes(location.pathname) ? "active" : ""}
           to="/groups/waiting"
@@ -84,8 +88,8 @@ const SidebarSuperAdmin = ({ closeSidebar }) => {
           <RoomIcon />
           Otaqlar
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink to="/tuition-fee" onClick={closeSidebar}>
           <ExpensesIcon />
           Təhsil haqqı
@@ -96,8 +100,8 @@ const SidebarSuperAdmin = ({ closeSidebar }) => {
           <SalaryIcon />
           Əmək haqqı
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink
           to="/finance"
           onClick={closeSidebar}
@@ -114,8 +118,8 @@ const SidebarSuperAdmin = ({ closeSidebar }) => {
           <ExpenseIcon />
           Xərclər
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink to="/career" onClick={closeSidebar}>
           <CareerIcon />
           Karyera
@@ -126,8 +130,8 @@ const SidebarSuperAdmin = ({ closeSidebar }) => {
           <MainPanelIcon />
           Konsultasiya
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink to="/sales" onClick={closeSidebar}>
           <SalesIcon />
           Satış
@@ -145,19 +149,13 @@ const SidebarSuperAdmin = ({ closeSidebar }) => {
           <AdminIcon />
           Əməkdaşlar
         </NavLink>
-      </li>
-      <li>
+      </li> */}
+      {/* <li>
         <NavLink to="/diploma" onClick={closeSidebar}>
           <DiplomaIcon />
           Diplom cədvəli
         </NavLink>
-      </li>
-      <li>
-        <NavLink to="/exams/futureExams" onClick={closeSidebar}>
-          <ExamIcon />
-          Imtahanlar
-        </NavLink>
-      </li>
+      </li> */}
     </ul>
   );
 };

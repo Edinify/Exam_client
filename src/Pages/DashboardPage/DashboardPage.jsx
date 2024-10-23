@@ -40,11 +40,11 @@ export const Dashboard = () => {
     <div className="dashboard-page">
       <div className="container">
         <div className="dashboard-main desktop">
-          <div className="left">
+          {/* <div className="left">
             <LessonsAmount />
             <LessonStatistics />
             <WhereHeard />
-          </div>
+          </div> */}
 
           <div className="right">
             <div className="top">
@@ -53,7 +53,7 @@ export const Dashboard = () => {
             </div>
 
             <div className="bottom">
-              <Table />
+              {/* <Table /> */}
             </div>
           </div>
         </div>

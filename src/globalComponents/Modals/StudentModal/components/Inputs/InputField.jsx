@@ -51,7 +51,7 @@ export default function InputField({
       marginTop: "24px",
       marginBottom: "0",
       inputValue: modalData[inputName] || "",
-      required: true,
+      required: false,
     },
     {
       inputName: "seria",
@@ -86,6 +86,7 @@ export default function InputField({
       marginTop: "24px",
       marginBottom: "0",
       inputValue: modalData[inputName] || "",
+      required: true,
     },
     {
       inputName: "password",
@@ -118,13 +119,12 @@ export default function InputField({
             marginTop:
               inputData.find((item) => item.inputName === inputName)
                 ?.marginTop || "0",
-           
+
             "& .MuiInputLabel-root.Mui-required:after": {
               content: '" *"',
-              color: "red", 
-              fontSize:"12px"
+              color: "red",
+              fontSize: "12px",
             },
-           
           }}
           InputLabelProps={{
             shrink:

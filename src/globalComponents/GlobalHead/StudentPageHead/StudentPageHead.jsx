@@ -34,11 +34,11 @@ const StudentPageHead = ({
               DATA_SEARCH_VALUE={DATA_SEARCH_VALUE}
             />
           )}
-          <CoursesDropdown deviceType="desktop" />
-          <GroupsDropdown deviceType="desktop" />
-          <StudentStatusDropdown deviceType="desktop" />
+          {/* <CoursesDropdown deviceType="desktop" /> */}
+          {/* <GroupsDropdown deviceType="desktop" /> */}
+          {/* <StudentStatusDropdown deviceType="desktop" /> */}
         </div>
-        <div className="student-other-container">
+        {/* <div className="student-other-container">
           <div className="lesson-table-btn-container teacher ">
             <button className="add-detail" onClick={() => filter()}>
               Tətbiq et
@@ -50,7 +50,7 @@ const StudentPageHead = ({
           </div>
 
           <ExcelExportBtn pageName="student" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

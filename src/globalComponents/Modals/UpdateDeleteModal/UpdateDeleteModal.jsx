@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { FUNC_COMPONENT_ACTION_TYPE } from "../../../redux/actions-type";
 import { ReactComponent as MoreIcon } from "../../../assets/icons/more.svg";
 import { downloadContractAction } from "../../../redux/actions/studentsActions";
+import { IoMdMore } from "react-icons/io";
 import { MdOutlineFileDownload } from "react-icons/md";
 
 const UpdateDeleteModal = ({
@@ -150,7 +151,16 @@ const UpdateDeleteModal = ({
           }}
         ></div>
       )}
-      <MoreIcon className="more-icon" onMouseDown={handleToggleModal} />
+
+      {(type == "exam" && (
+        <IoMdMore
+          className="more-icon"
+          color="white"
+          fontSize={"28px"}
+          onMouseDown={handleToggleModal}
+        />
+      )) || <MoreIcon className="more-icon" onMouseDown={handleToggleModal} />}
+
       <div
         className={`delete-update-modal  ${
           funcComp === data._id ? "active" : ""
@@ -227,7 +237,7 @@ const UpdateDeleteModal = ({
               </h4>
             )}
 
-          {contractBtn && (
+          {/* {contractBtn && (
             <h4
               className="confirm"
               onClick={downloadContract}
@@ -240,7 +250,7 @@ const UpdateDeleteModal = ({
               <span>Müqavilə</span>
               <MdOutlineFileDownload style={{}} />
             </h4>
-          )}
+          )} */}
         </>
       </div>
     </div>

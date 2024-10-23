@@ -12,7 +12,8 @@ import DeleteItemModal from "../../../globalComponents/Modals/DeleteItemModal/De
 import { useState } from "react";
 import {
   deleteQuestion,
-  updateQuestionByStudentAction,
+  updateQuestionAction,
+  // updateQuestionByStudentAction,
 } from "../../../redux/actions/examActions";
 
 const QuestionCard = ({
@@ -61,7 +62,9 @@ const QuestionCard = ({
       )}
       <div className="question-card">
         <div className="question-header">
-          <h3>{data?.text}</h3>
+          <h3>
+            {cellNumber}. {data?.text}
+          </h3>
           <div className="exam-functions-container">
             {user?.role != "student" && (
               <UpdateDeleteModal
@@ -82,9 +85,16 @@ const QuestionCard = ({
                 )) || (
                   <input
                     type="checkbox"
-                    checked={data?.studentAnswer?.answer === item.option}
+                    checked={item.isCorrectByStudent}
                     onChange={() => {
-                      updateQuestionByStudentAction({});
+                      const newOptions = data.options.map((item, index) =>
+                        i === index
+                          ? { ...item, isCorrectByStudent: true }
+                          : { ...item, isCorrectByStudent: false }
+                      );
+                      dispatch(
+                        updateQuestionAction(data._id, { options: newOptions })
+                      );
                     }}
                   />
                 )}

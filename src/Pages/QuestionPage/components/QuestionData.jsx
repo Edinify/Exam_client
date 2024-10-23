@@ -23,15 +23,17 @@ const QuestionData = () => {
     <>
       {openConfirmModal && <ConfirmModal type="student" />}
       <div className="questions-container">
-
-    
-      <ol>
-        {questions?.map((question) => (
-          <li key={question._id}>
-            <QuestionCard data={question} key={question._id} />
-          </li>
-        ))}
-      </ol>
+        <ul>
+          {questions?.map((question, i) => (
+            <li key={question._id}>
+              <QuestionCard
+                data={question}
+                key={question._id}
+                cellNumber={i + 1}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
 
       <div className="details-list-tablet with-more">

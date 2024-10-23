@@ -26,10 +26,12 @@ export const StudentModal = () => {
   // formik
   const formik = useFormik({
     initialValues: {
-      fullName: modalData.fullName ? modalData.fullName : "",
-      fin: modalData.fin ? modalData.fin : "",
+      fullName: modalData?.fullName ? modalData.fullName : "",
+      fin: modalData?.fin ? modalData.fin : "",
+      email: modalData?.email ? modalData.email : "",
     },
     validationSchema: useValidationSchema(modalData),
+    validateOnMount: true,
   });
   const setInputValue = useCallback(
     (key, value) =>
@@ -114,7 +116,7 @@ export const StudentModal = () => {
               ))}
             </div>
 
-            <WhereSend
+            {/* <WhereSend
               modalData={modalData}
               updateModalState={updateModalState}
               formik={formik}
@@ -123,9 +125,9 @@ export const StudentModal = () => {
               modalData={modalData}
               updateModalState={updateModalState}
               formik={formik}
-            />
+            /> */}
 
-            <CoursesList
+            {/* <CoursesList
               modalData={modalData}
               updateModalState={updateModalState}
               formik={formik}
@@ -135,7 +137,7 @@ export const StudentModal = () => {
               setInputValue={setInputValue}
               updateModalState={updateModalState}
               modalData={modalData}
-            />
+            /> */}
           </div>
         </Box>
 

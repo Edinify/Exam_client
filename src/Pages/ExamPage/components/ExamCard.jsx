@@ -27,6 +27,8 @@ const ExamCard = ({ data }) => {
   };
 
   const onHandleClick = () => {
+    if (!data.active) return;
+
     if (
       location.pathname === "/exams/pastExams" ||
       location.pathname === "/exams/futureExams"
@@ -51,7 +53,7 @@ const ExamCard = ({ data }) => {
       {showMoreModal && (
         <ExamMoreModal data={data} setShowMoreModal={setShowMoreModal} />
       )}
-      <div className="exam-card">
+      <div className="exam-card" style={{ opacity: data.active ? 1 : 0.8 }}>
         <div className="exam-img">
           <img src={LessonIcon} alt="" />
         </div>
@@ -68,7 +70,7 @@ const ExamCard = ({ data }) => {
         </div>
         <div className="exam-card-container" onClick={onHandleClick}>
           <h4>{data?.name}</h4>
-          <h5>{moment(data?.date).format("YYYY.MM.DD")}</h5>
+          <h5>{moment(data?.date).format("DD.MM.YYYY")}</h5>
           <h5>{`${data?.startTime} - ${data?.endTime}`}</h5>
         </div>
       </div>

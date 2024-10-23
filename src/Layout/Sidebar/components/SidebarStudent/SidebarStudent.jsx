@@ -7,7 +7,7 @@ const SidebarStudent = ({ closeSidebar }) => {
   const location = useLocation();
   return (
     <ul className="sidebar-nav-list">
-      <li>
+      {/* <li>
         <Link
           onClick={closeSidebar}
           to="/student-panel"
@@ -16,7 +16,7 @@ const SidebarStudent = ({ closeSidebar }) => {
           <TableIcon />
           Cədvəl
         </Link>
-      </li>
+      </li> */}
       <li>
         <Link to="/exams/futureExams" onClick={closeSidebar}>
           <ExamIcon />
