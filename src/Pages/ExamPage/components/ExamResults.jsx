@@ -1,10 +1,18 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getExamResultAction } from "../../../redux/actions/examActions";
+import { useParams } from "react-router-dom";
 
 const ExamResults = () => {
   const tableHead = ["Tələbə adı", "Sual sayı", "Düz cavab "];
 
   const { examResult } = useSelector((state) => state.examsData);
+  const dispatch = useDispatch();
+  const { _id } = useParams();
+
+  useEffect(() => {
+    dispatch(getExamResultAction(_id));
+  }, []);
 
   return (
     <>

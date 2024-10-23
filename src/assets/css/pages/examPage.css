@@ -116,17 +116,19 @@
 
 .exam-results{
   padding: 0 16px;
+  margin: 30px 0;
 }
 
 .exam-results .exam-results-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .exam-results .exam-results-header h2 {
   color: var(--primary-500);
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 600;
 }
 
@@ -137,7 +139,7 @@
 }
 
 .exam-results .exam-results-header span {
-  font-size: 32px;
+  font-size: 24px;
   color: #faad52;
 }
 

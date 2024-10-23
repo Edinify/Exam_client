@@ -5,7 +5,8 @@ const initialState = {
   loading: false,
   hasMore: true,
   totalLength: 0,
-  examResult:{}
+  examResult: {},
+  studentExamResults: {},
 };
 
 export const examsReducer = (state = initialState, action) => {
@@ -48,11 +49,16 @@ export const examsReducer = (state = initialState, action) => {
         ...state,
         loading: action.payload,
       };
-      case EXAM_PAGE_ACTION_TYPE.GET_RESULTS:
-        return{
-          ...state,
-          examResult:action.payload
-        }
+    case EXAM_PAGE_ACTION_TYPE.GET_RESULTS:
+      return {
+        ...state,
+        examResult: action.payload,
+      };
+    case EXAM_PAGE_ACTION_TYPE.GET_STUDENT_RESULTS:
+      return {
+        ...state,
+        studentExamResults: action.payload,
+      };
 
     default:
       return state;

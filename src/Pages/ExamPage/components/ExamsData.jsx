@@ -8,8 +8,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import SmallLoading from "../../../globalComponents/Loading/components/SmallLoading/SmallLoading";
 
 const ExamsData = ({ getNextExam }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
+  // const navigate = useNavigate();
+  // const location = useLocation();
 
   const { exams, hasMore } = useSelector((state) => state.examsData);
   const [scrollHeight, setScrollHeight] = useState(1);

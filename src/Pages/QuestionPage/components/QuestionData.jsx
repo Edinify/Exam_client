@@ -13,6 +13,8 @@ const QuestionData = () => {
 
   console.log(questions, "questionss");
 
+  const { user } = useSelector((state) => state.user);
+
   useEffect(() => {
     if (openMoreModal) {
       document.body.style.overflowY = "hidden";
@@ -24,7 +26,7 @@ const QuestionData = () => {
   return (
     <>
       {openConfirmModal && <ConfirmModal type="student" />}
-      {openResultModal && <ResultModal/>}
+      {openResultModal && <ResultModal />}
       <div className="questions-container">
         <ul>
           {questions?.map((question, i) => (
@@ -37,9 +39,11 @@ const QuestionData = () => {
             </li>
           ))}
         </ul>
-        <div className="question-acc-btn">
-          <button onClick={() => setOpenResultModal(true)}>Təsdiqlə</button>
-        </div>
+        {user.role !== "super-admin" && (
+          <div className="question-acc-btn">
+            <button onClick={() => setOpenResultModal(true)}>Təsdiqlə</button>
+          </div>
+        )}
       </div>
 
       <div className="details-list-tablet with-more">

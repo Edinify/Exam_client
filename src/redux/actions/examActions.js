@@ -145,6 +145,24 @@ export const deleteExamAction = (_id) => async (dispatch) => {
   }
 };
 
+export const getExamResultAction=(_id) =>async(dispatch)=>{
+  try {
+    const {data} = await API.get(`/results/byExam/${_id}`);
+    dispatch({type:EXAM_PAGE_ACTION_TYPE.GET_RESULTS,payload:data})
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const getStudentExamResultAction=()=>async(dispatch)=>{
+  try {
+    const {data} = await API.get("/results/bySudent");
+    dispatch({type:EXAM_PAGE_ACTION_TYPE.GET_STUDENT_RESULTS,payload:data})
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 // questions  actions
 
 export const getQuestionAction = (id) => async (dispatch) => {
