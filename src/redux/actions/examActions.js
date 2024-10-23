@@ -147,7 +147,7 @@ export const deleteExamAction = (_id) => async (dispatch) => {
 
 export const getExamResultAction=(_id) =>async(dispatch)=>{
   try {
-    const {data} = await API.get(`/results/byExam/${_id}`);
+    const {data} = await API.get(`/results/by-exam/${_id}`);
     dispatch({type:EXAM_PAGE_ACTION_TYPE.GET_RESULTS,payload:data})
   } catch (error) {
     console.log(error)
@@ -156,7 +156,7 @@ export const getExamResultAction=(_id) =>async(dispatch)=>{
 
 export const getStudentExamResultAction=()=>async(dispatch)=>{
   try {
-    const {data} = await API.get("/results/bySudent");
+    const {data} = await API.get("/results/by-student");
     dispatch({type:EXAM_PAGE_ACTION_TYPE.GET_STUDENT_RESULTS,payload:data})
   } catch (error) {
     console.log(error)
