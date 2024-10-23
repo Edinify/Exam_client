@@ -24,7 +24,7 @@ const QuestionData = () => {
   return (
     <>
       {openConfirmModal && <ConfirmModal type="student" />}
-      {openResultModal && <ResultModal setOpenResultModal={setOpenResultModal} />}
+      {openResultModal && <ResultModal/>}
       <div className="questions-container">
         <ul>
           {questions?.map((question, i) => (
